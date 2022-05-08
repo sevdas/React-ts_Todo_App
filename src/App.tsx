@@ -1,12 +1,25 @@
+import UserInputTodo from './components/UserInputTodo'
 import Todos from './components/Todos'
 import Todo from './models/todo'
 import './App.css';
+import React from 'react';
 
+const App = () => {
+  // const todos = [new Todo('Learn React'), new Todo('Learn TypeScript')]
+  const [todos, setTodos] = React.useState<Todo[]>([])
 
-function App() {
-  const todos = [new Todo('Learn React'), new Todo('Learn TypeScript')]
+  const addTodoHandler = (todoText: string) => {
+    const newTodo = new Todo(todoText)
+    setTodos((prevTodos) => {
+      return [...prevTodos, newTodo] // prevTodos.concat(newTodo)
+    })
+  }
+
   return (
-      <Todos items={todos}/>
+    <>
+      <UserInputTodo onAddTodo={addTodoHandler}/>
+      <Todos items={todos} />
+    </>
   );
 }
 
