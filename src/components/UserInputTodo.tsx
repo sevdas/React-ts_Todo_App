@@ -15,6 +15,7 @@ const UserInputTodo: React.FC<UserInputTodoProps> = ({ onAddTodo }) => {
 
         if (inputEl && inputEl.current) {
             onAddTodo(inputEl.current.value)
+            inputEl.current.value = '' // reset
         }
         return
     }

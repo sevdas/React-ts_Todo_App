@@ -7,6 +7,11 @@ import React from 'react';
 const App = () => {
   const [todos, setTodos] = React.useState<Todo[]>([])
 
+  const removeTodoHandler = (todoId: string) => {
+    const newTodo = todos.filter(todo => todo.id !== todoId)
+    setTodos(newTodo)
+}
+
   const addTodoHandler = (todoText: string) => {
     const newTodo = new Todo(todoText)
     setTodos((prevTodos) => {
@@ -17,7 +22,7 @@ const App = () => {
   return (
     <>
       <UserInputTodo onAddTodo={addTodoHandler}/>
-      <Todos items={todos} />
+      <Todos items={todos} handleRemove={removeTodoHandler}/>
     </>
   );
 }
