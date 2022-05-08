@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react'
+import classes from './UserInputTodo.module.css'
 
 interface UserInputTodoProps {
     onAddTodo: (text: string) => void
@@ -19,7 +20,7 @@ const UserInputTodo: React.FC<UserInputTodoProps> = ({ onAddTodo }) => {
     }
 
     return (
-        <form action="" onSubmit={submitHandler}>
+        <form action="" onSubmit={submitHandler} className={classes.form}>
             <label htmlFor="todoInput">TODO</label>
             <input ref={inputEl} id="todoInput" type="text" name="todo" />
             <button>Add Todo</button>

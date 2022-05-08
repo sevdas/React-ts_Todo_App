@@ -1,3 +1,4 @@
+import classes from './TodoItem.module.css'
 interface TodoItemProps {
     text: string;
 }
@@ -5,7 +6,7 @@ interface TodoItemProps {
 const TodoItem: React.FC<TodoItemProps> = ({ text }) => {
 
     return (
-        <li>{text}</li>
+        <li className={classes.item}>{text}</li>
     )
 }
 

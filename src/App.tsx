@@ -5,7 +5,6 @@ import './App.css';
 import React from 'react';
 
 const App = () => {
-  // const todos = [new Todo('Learn React'), new Todo('Learn TypeScript')]
   const [todos, setTodos] = React.useState<Todo[]>([])
 
   const addTodoHandler = (todoText: string) => {
